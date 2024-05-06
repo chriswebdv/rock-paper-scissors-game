@@ -1,4 +1,6 @@
 // write function which plays the computer's part of the game
+let humanScore = 0
+let computerScore = 0
 
 function getComputerChoice() {
     let rock = "rock"
@@ -19,6 +21,4 @@ function getComputerChoice() {
 
 function getHumanChoice () {
     let humanChoice = prompt("Choose one: rock, paper, scissors ")
-    console.log(humanChoice);
 }
-getHumanChoice()
