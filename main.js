@@ -1,6 +1,6 @@
 // write function which plays the computer's part of the game
-let humanScore = 0
-let computerScore = 0
+let humanScore;
+let computerScore;
 
 function getComputerChoice() {
     let rock = "rock"
@@ -51,7 +51,19 @@ function playRound(humanChoice, computerChoice) {
         
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
+// playGame function
+function playGame() {
+    humanScore = 0
+    computerScore = 0
+    const humanSelection = getHumanChoice()
+    const computerSelection = getComputerChoice()
+    playRound(humanSelection, computerSelection)
+}
 
-playRound(humanSelection, computerSelection)
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
+
+
