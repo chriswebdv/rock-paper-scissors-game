@@ -7,23 +7,18 @@ function getComputerChoice() {
     let computerChoice = Math.floor(Math.random()*3);
 
     if (computerChoice === 0) {
-        //return rock
-        console.log(rock);
+        return rock
     } else if (computerChoice === 1) {
-        //return paper
-        console.log(paper);
+        return paper
     }else {
-        //return scissors
-        console.log(scissors);
+        return scissors
     }
 }
 
-getComputerChoice()
-
-
-
-
-
-
 // Write the logic for the human choice using if/else statements
 
+function getHumanChoice () {
+    let humanChoice = prompt("Choose one: rock, paper, scissors ")
+    console.log(humanChoice);
+}
+getHumanChoice()
