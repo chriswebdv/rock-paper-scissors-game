@@ -20,8 +20,23 @@ function getComputerChoice() {
 // Write the logic for the human choice using if/else statements
 
 function getHumanChoice() {
-  let humanChoice = prompt("Choose one: rock, paper, scissors ").toLowerCase();
-  return humanChoice;
+  const btn1 = document.querySelector(".btn1");
+
+  btn1.addEventListener("click", function (e) {
+    playRound("rock");
+  });
+
+  const btn2 = document.querySelector(".btn2");
+
+  btn2.addEventListener("click", function (e) {
+    playRound("paper");
+  });
+
+  const btn3 = document.querySelector(".btn3");
+
+  btn3.addEventListener("click", function (e) {
+    playRound("scissors");
+  });
 }
 
 // Single round play
@@ -51,10 +66,8 @@ function playRound(humanChoice, computerChoice) {
 }
 
 // playGame function
-function playGame() {
-  humanScore = 0;
-  computerScore = 0;
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
-  playRound(humanSelection, computerSelection);
-}
+humanScore = 0;
+computerScore = 0;
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+playRound();
