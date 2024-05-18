@@ -15,13 +15,15 @@ function getComputerChoice() {
   }
 }
 
-const btns = document.querySelectorAll("button[id^=but]");
+function getHumanChoice() {
+  const btns = document.querySelectorAll("button[id^=but]");
 
-btns.forEach((btn) => {
-  btn.addEventListener("click", (event) => {
-    console.log(event.target.id);
+  btns.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      return event.target.id;
+    });
   });
-});
+}
 
 function playRound(humanC, computerC) {
   if (humanC === computerC) {
