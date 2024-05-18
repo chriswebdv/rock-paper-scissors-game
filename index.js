@@ -26,11 +26,23 @@ btns.forEach((btn) => {
 function playRound(humanC, computerC) {
   if (humanC === computerC) {
     console.log("It's a tie!");
-  } else if (humanc === "rock" && computerC === "paper") {
+  } else if (humanC === "rock" && computerC === "paper") {
     console.log("You lose, paper beats rock!");
     computerScore++;
   } else if (humanC === "rock" && computerC === "scissors") {
     console.log("You win, rock beats scissors");
+    humanScore++;
+  } else if (computerC === "rock" && humanC === "paper") {
+    console.log("You win, paper beats rock");
+    humanScore++;
+  } else if (computerC === "rock" && humanC === "scissors") {
+    console.log("You lose, rock beats scissors");
+    computerScore++;
+  } else if (humanC === "paper" && computerC === "scissors") {
+    console.log("You lose, scissors beats paper");
+    computerScore++;
+  } else if (computerC === "paper" && humanC === "scissors") {
+    console.log("You win, scissors beat paper");
     humanScore++;
   }
 }
