@@ -1,7 +1,6 @@
 // score count variables
-
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 // Computer Choice
 function getComputerChoice() {
@@ -15,16 +14,7 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  const btns = document.querySelectorAll("button[id^=but]");
-
-  btns.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-      return event.target.id;
-    });
-  });
-}
-
+// Play round logic
 function playRound(humanC, computerC) {
   if (humanC === computerC) {
     console.log("It's a tie!");
@@ -47,4 +37,30 @@ function playRound(humanC, computerC) {
     console.log("You win, scissors beat paper");
     humanScore++;
   }
+  console.log(`Human: ${humanScore} - Computer: ${computerScore}`);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".but");
+
+  function getHumanChoice(event) {
+    const buttonId = event.target.id;
+    let choice;
+    if (buttonId === "but1") {
+      choice = "rock";
+    } else if (buttonId === "but2") {
+      choice = "paper";
+    } else if (buttonId === "but3") {
+      choice = "scissors";
+    }
+    return choice;
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const humanSelection = getHumanChoice(event);
+      const computerSelection = getComputerChoice();
+      playRound(humanSelection, computerSelection);
+    });
+  });
+});
